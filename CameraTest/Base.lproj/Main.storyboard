@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller - Item 1-->
+        <!--HomeViewController-->
         <scene sceneID="Q9c-vh-xVt">
             <objects>
-                <viewController id="YP5-Db-2mV" customClass="MainViewController" sceneMemberID="viewController">
+                <viewController id="YP5-Db-2mV" userLabel="HomeViewController" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NwD-nF-7lf"/>
                         <viewControllerLayoutGuide type="bottom" id="Nw0-rR-I02"/>
@@ -46,7 +46,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" image="home.png" id="uC5-48-fZK"/>
+                    <tabBarItem key="tabBarItem" title="" image="home.png" id="uC5-48-fZK"/>
                     <connections>
                         <outlet property="homeScreen" destination="RkZ-kO-ozl" id="ffA-Ui-2BF"/>
                     </connections>
@@ -55,28 +55,10 @@
             </objects>
             <point key="canvasLocation" x="1151" y="-44"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="EQS-DG-pqq">
-            <objects>
-                <viewController id="Gmw-wB-guf" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="chT-O9-qT3"/>
-                        <viewControllerLayoutGuide type="bottom" id="sxB-Vg-hF4"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="CRm-pO-oa7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mum-FZ-Z6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1628" y="-39"/>
-        </scene>
-        <!--View Controller-->
+        <!--LogingViewController-->
         <scene sceneID="b67-nQ-EBe">
             <objects>
-                <viewController id="Vnq-iQ-Ou6" sceneMemberID="viewController">
+                <viewController id="Vnq-iQ-Ou6" userLabel="LogingViewController" customClass="LogingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iH4-8r-aBR"/>
                         <viewControllerLayoutGuide type="bottom" id="DKS-7b-Cfu"/>
@@ -107,20 +89,30 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Vnq-iQ-Ou6" id="Kx4-ge-uEY"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k5B-bC-Vgo">
                                 <rect key="frame" x="96" y="226" width="126" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Vnq-iQ-Ou6" id="BTN-ER-dlO"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="emailAddress" destination="Gym-dt-Rgu" id="1Kc-Yu-fiW"/>
+                        <outlet property="password" destination="k5B-bC-Vgo" id="ZoB-Xy-IgX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BlE-aw-dVo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="283"/>
+            <point key="canvasLocation" x="-59" y="348"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="NfM-lL-wkz">
@@ -135,13 +127,33 @@
                     <connections>
                         <segue destination="YP5-Db-2mV" kind="relationship" relationship="viewControllers" id="cYj-sj-hmY"/>
                         <segue destination="NCT-PJ-w6v" kind="relationship" relationship="viewControllers" id="aX3-Rd-yWG"/>
+                        <segue destination="zc8-da-c2c" kind="relationship" relationship="viewControllers" id="I2W-9e-A6E"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhX-fg-QUN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="617" y="283"/>
+            <point key="canvasLocation" x="523" y="971"/>
         </scene>
-        <!--Camera View Controller - Item 2-->
+        <!--UserViewController-->
+        <scene sceneID="G7m-Oa-JAZ">
+            <objects>
+                <viewController id="zc8-da-c2c" userLabel="UserViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LOB-WR-Lbp"/>
+                        <viewControllerLayoutGuide type="bottom" id="0vW-SV-VH1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ere-If-68l">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="man.png" id="Al0-aW-dEL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uPw-Rd-UfB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1143" y="1306"/>
+        </scene>
+        <!--Camera View Controller-->
         <scene sceneID="qgK-uv-JNU">
             <objects>
                 <viewController id="NCT-PJ-w6v" customClass="CameraViewController" sceneMemberID="viewController">
@@ -171,7 +183,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" image="camera.png" id="Xld-WI-sbk"/>
+                    <tabBarItem key="tabBarItem" title="" image="camera.png" id="Xld-WI-sbk"/>
                     <connections>
                         <outlet property="imageView" destination="QuU-fY-VlJ" id="SLa-sq-zzk"/>
                     </connections>
@@ -184,6 +196,7 @@
     <resources>
         <image name="camera.png" width="30" height="30"/>
         <image name="home.png" width="30" height="30"/>
+        <image name="man.png" width="30" height="30"/>
         <image name="photo.png" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
